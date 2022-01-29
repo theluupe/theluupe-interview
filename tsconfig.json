@@ -1,0 +1,33 @@
+{
+  "compilerOptions": {
+    "jsx": "preserve",
+    "target": "es5",
+    "module": "esnext",
+    "lib": ["dom", "dom.iterable", "esnext"],
+    "allowJs": true,
+    "strict": true,
+    "noEmit": true,
+    "moduleResolution": "node",
+    "resolveJsonModule": true,
+    "isolatedModules": true,
+    "baseUrl": ".",
+    "paths": {
+      "@dal/*": ["src/dal/*"],
+      "@dom/*": ["src/dom/*"],
+      "@lib/*": ["src/lib/*"],
+      "@assets/*": ["assets/*"],
+      // atomic design: https://bradfrost.com/blog/post/atomic-web-design/
+      "@atoms/*": ["src/atoms/*"],
+      "@molecules/*": ["src/molecules/*"],
+      "@organisms/*": ["src/organisms/*"],
+      "@templates/*": ["src/templates/*"],
+      "@pages/*": ["src/pages/*"],
+      // TODO: remove shared folder
+      "@shared/*": ["shared/*"]
+    },
+    "types": ["@types/intercom-web"],
+    "esModuleInterop": true,
+    "skipLibCheck": true,
+    "forceConsistentCasingInFileNames": true,
+  },
+}
