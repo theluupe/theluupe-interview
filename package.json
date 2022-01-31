@@ -20,7 +20,7 @@
     "@prisma/client": "^2.30.3",
     "@rehooks/component-size": "^1.0.3",
     "@szhsin/react-menu": "^2.3.0",
-    "@theluupe/ui-theme": "git+ssh://git@github.com:theluupe/ui-theme.git#1.0.30",
+    "@theluupe/ui-theme": "file:./ui-theme",
     "@tippyjs/react": "^4.0.1",
     "@zeit/next-css": "^1.0.1",
     "apicache": "^1.5.3",
