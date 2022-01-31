@@ -1589,11 +1589,8 @@
   dependencies:
     defer-to-connect "^1.0.1"
 
-"@theluupe/ui-theme@git+ssh://git@github.com:theluupe/ui-theme.git#1.0.30":
-  version "1.0.30"
-  resolved "git+ssh://git@github.com:theluupe/ui-theme.git#023d7745e4fa39a7b2653e276e0ad4df10bd5e0f"
-  dependencies:
-    bootstrap "^4.4.1"
+"@theluupe/ui-theme@file:./ui-theme":
+  version "0.0.0"
 
 "@tippyjs/react@^4.0.1":
   version "4.2.6"
