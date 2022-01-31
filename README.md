@@ -4,7 +4,7 @@
 
 ### Introduction
 
-The web application uses [Next.js](https://nextjs.org/) together with a [custom server](https://nextjs.org/docs/advanced-features/custom-server)
+Welcome to our interview App. The web application uses [Next.js](https://nextjs.org/) together with a [custom server](https://nextjs.org/docs/advanced-features/custom-server)
 that uses [graphql-yoga](https://github.com/prisma-labs/graphql-yoga) to run the GraphQL API. The main benefits of this are:
 
 - Next.js provides SSR support for better search engine indexing and load times on slower devices, as well as a sensible and tested framework
@@ -12,6 +12,8 @@ that uses [graphql-yoga](https://github.com/prisma-labs/graphql-yoga) to run the
 - GraphQL is becoming the standard for APIs, and something we can open up to other companies for integration purposes.
 - Using a custom server with Next.js allows us to run both SSR and our GraphQL API with one command, on a single instance. This
   eases development and deployments until we need to separate these into separate projects.
+
+You will find the actual activities and requirements once you run the app and go to the main page (`/`)
 
 ### Frontend
 
