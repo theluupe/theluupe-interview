@@ -39,6 +39,8 @@ the GraphQL routes:
 
 Most of the backend-specific code is in the `/server` folder.
 
+NOTE: If for some reason you can't run Node 12 in your computer this app should also work on Node 16. If you face any kind of issue please contact us.
+
 ### Database
 
 Our database code is managed by [Prisma](https://github.com/prisma/prisma). On the backend, we interface with our database using [Prisma Client](https://github.com/prisma/prisma-client-js) on the backend, which is called in our
