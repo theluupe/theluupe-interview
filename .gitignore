@@ -2,8 +2,6 @@
 
 # dependencies
 node_modules
-/.pnp
-.pnp.js
 
 # testing
 /coverage
@@ -17,12 +15,8 @@ node_modules
 
 # misc
 .DS_Store
-.env*
 .idea
 .vscode
-gitignored
-cloud_sql_proxy
-etc/scripts/*.json
 
 # debug
 npm-debug.log*
@@ -30,5 +24,4 @@ yarn-debug.log*
 yarn-error.log*
 
 # prisma
-failed-inferMigrationSteps*.md
 server/graphql/generated

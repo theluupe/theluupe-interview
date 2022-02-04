@@ -13,7 +13,7 @@ that uses [graphql-yoga](https://github.com/prisma-labs/graphql-yoga) to run the
 - Using a custom server with Next.js allows us to run both SSR and our GraphQL API with one command, on a single instance. This
   eases development and deployments until we need to separate these into separate projects.
 
-You will find the actual activities and requirements once you run the app and go to the main page (`/`)
+The app is running on port `3000` and you will find the actual activities and requirements once you run the app and go to the main page (`localhost:3000/`)
 
 ### Frontend
 
