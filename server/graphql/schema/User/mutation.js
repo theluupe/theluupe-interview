@@ -1,5 +1,6 @@
 const { extendType } = require('nexus');
 const { User, SignUpInput, LoginInput } = require('./types');
+const { signUp, login, logout } = require('./resolvers');
 
 const Mutation = extendType({
   type: 'Mutation',
@@ -18,6 +19,10 @@ const Mutation = extendType({
         data: LoginInput,
       },
       resolve: login,
+    });
+    t.field('logout', {
+      type: 'Boolean',
+      resolve: logout,
     });
   },
 });
