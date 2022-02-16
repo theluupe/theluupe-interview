@@ -1,4 +1,3 @@
-const { UserInputError } = require('apollo-client');
 const { setLoginSession, passwordIsValid, generatePassword, removeTokenCookie } = require('../../../lib/auth');
 
 function fullName(parent) {
@@ -35,7 +34,7 @@ async function login(_parent, { data }, { prisma, response }) {
     return user;
   }
 
-  throw new UserInputError('Invalid email and password combination');
+  throw new Error('Invalid email and password combination');
 }
 
 async function logout(_parent, _args, { response }) {
