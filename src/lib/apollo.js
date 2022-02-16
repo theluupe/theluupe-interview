@@ -51,9 +51,6 @@ function createApolloClient(initialState = {}) {
     // We only need absolute URLs on the server
     uri: `${isSSR ? 'http://localhost:3000' : ''}/graphql`,
     credentials: 'same-origin',
-    // headers: {
-    //   Authorization: get(user, 'accessToken', ''),
-    // },
     fetch,
   });
   return new ApolloClient({
