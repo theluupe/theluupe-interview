@@ -1,5 +1,6 @@
 const { nexusPrisma } = require('nexus-plugin-prisma');
 const { makeSchema, declarativeWrappingPlugin } = require('nexus');
+const { getLoginSession } = require('../lib/auth');
 const prisma = require('../lib/prisma');
 const types = require('./schema');
 
@@ -12,9 +13,12 @@ const schema = makeSchema({
   },
 });
 
-const context = request => {
+const context = async ({ request, response }) => {
+  const session = await getLoginSession(request);
   return {
-    ...request,
+    session,
+    request,
+    response,
     prisma,
   };
 };

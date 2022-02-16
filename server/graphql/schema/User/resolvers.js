@@ -1,4 +1,5 @@
-const { generatePassword } = require('../../../lib/auth');
+const { UserInputError } = require('apollo-client');
+const { setLoginSession, passwordIsValid, generatePassword } = require('../../../lib/auth');
 
 function fullName(parent) {
   const { firstName, lastName } = parent;
@@ -19,7 +20,26 @@ async function signUp(_parent, { data }, { prisma }) {
   return user;
 }
 
+async function login(_parent, { data }, { prisma, response }) {
+  const user = await prisma.user.findUnique({ where: { email: data.email } });
+  if (user && passwordIsValid(user.salt, user.password, data.password)) {
+    const session = {
+      user: {
+        id: user.id,
+        email: user.email,
+      },
+    };
+
+    await setLoginSession(response, session);
+
+    return user;
+  }
+
+  throw new UserInputError('Invalid email and password combination');
+}
+
 module.exports = {
   fullName,
   signUp,
+  login,
 };

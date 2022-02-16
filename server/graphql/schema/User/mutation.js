@@ -1,6 +1,6 @@
 const { extendType } = require('nexus');
-const { SignUpInput } = require('./types');
-const { signUp } = require('./resolvers');
+const { SignUpInput, LoginInput } = require('./types');
+const { signUp, login } = require('./resolvers');
 
 const Mutation = extendType({
   type: 'Mutation',
@@ -12,6 +12,13 @@ const Mutation = extendType({
         data: SignUpInput,
       },
       resolve: signUp,
+    });
+    t.field('login', {
+      type: 'User',
+      args: {
+        data: LoginInput,
+      },
+      resolve: login,
     });
   },
 });
