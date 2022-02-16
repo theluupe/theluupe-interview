@@ -1,5 +1,5 @@
 module.exports = {
-  ...require('./Mutation'),
-  ...require('./Query'),
+  ...require('./mutation'),
+  ...require('./query'),
   ...require('./User'),
 };

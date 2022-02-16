@@ -1,10 +1,6 @@
 const { mutationType } = require('nexus');
 
-const Mutation = mutationType({
-  definition(t) {
-    t.crud.createOneUser();
-  },
-});
+const Mutation = mutationType();
 
 module.exports = {
   Mutation,
