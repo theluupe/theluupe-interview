@@ -9,7 +9,6 @@ const { log } = require('../shared/lib/logger');
 const { schema, context } = require('./graphql');
 const { permissionsMiddleware } = require('./graphql/middleware/permissions');
 const { nextApp, nextMiddleware } = require('./routers/next');
-const { authRouter } = require('./routers/auth');
 const prisma = require('./lib/prisma');
 
 Graceful.captureExceptions = true;
@@ -40,8 +39,6 @@ async function start() {
     gqlServer.express.disable('x-powered-by');
     gqlServer.express.enable('trust proxy');
     gqlServer.express.use(requestId());
-    // Add server-wide express middleware
-    gqlServer.express.use(basePaths.auth, authRouter);
     // Add Next.js routes to GraphQL server base
     gqlServer.use(nextMiddleware(Object.values(basePaths)));
     await gqlServer.start({
