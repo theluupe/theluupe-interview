@@ -1,5 +1,5 @@
 generator client {
-  provider = "prisma-client-js"
+  provider      = "prisma-client-js"
   binaryTargets = ["native"]
 }
 
@@ -9,8 +9,11 @@ datasource db {
 }
 
 model User {
-  id          String  @id @default(cuid())
-  email       String  @unique
-  firstName   String?
-  lastName    String?
+  id        String  @id @default(cuid())
+  email     String  @unique
+  firstName String?
+  lastName  String?
+  // 1234 as the default password
+  password  String  @default("1893d0a0fa1b608de784327a39856244fa850f7a37079d6f44e20a891642b312e32e7bde5aa8310b16d5a0677b6f3953ca19f23590281acf4f7c2c65eaf06a1c")
+  salt      String  @default("e734f141a782ccf5c09f8e2604454680")
 }
