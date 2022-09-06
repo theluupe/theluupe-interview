@@ -15,6 +15,7 @@ type IUsersManagerProps = {
 const columns = [
   { Header: 'Email', accessor: 'email' },
   { Header: 'FullName', accessor: 'fullName' },
+  { Header: 'Posts', accessor: 'posts' },
 ];
 
 export function UsersManager({ users }: IUsersManagerProps): JSX.Element {
