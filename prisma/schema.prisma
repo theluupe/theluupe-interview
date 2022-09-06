@@ -1,0 +1,45 @@
+generator client {
+  provider      = "prisma-client-js"
+  binaryTargets = ["native"]
+}
+
+datasource db {
+  provider = "sqlite"
+  url      = env("DATABASE_URL")
+}
+
+model User {
+  id        String  @id @default(cuid())
+  email     String  @unique
+  firstName String?
+  lastName  String?
+  posts     Post[]
+}
+
+model Post {
+  id        String        @id @default(cuid())
+  title     String
+  content   String
+  image     String?
+  createdAt DateTime      @default(now())
+  updatedAt DateTime      @updatedAt()
+  author    User?         @relation(fields: [authorId], references: [id])
+  authorId  String?
+  tags      TagsOnPosts[]
+}
+
+model Tag {
+  id    String        @id @default(cuid())
+  name  String
+  posts TagsOnPosts[]
+}
+
+model TagsOnPosts {
+  id         String   @id @default(cuid())
+  post       Post?    @relation(fields: [postId], references: [id])
+  postId     String // relation scalar field (used in the `@relation` attribute above)
+  tag        Tag?     @relation(fields: [tagId], references: [id])
+  tagId      String // relation scalar field (used in the `@relation` attribute above)
+  assignedAt DateTime @default(now())
+  assignedBy String
+}

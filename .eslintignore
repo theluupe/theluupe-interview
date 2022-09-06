@@ -1,0 +1,3 @@
+# Fix ESLint: Only declares and type imports are 
+# allowed inside declare module for .d.ts files
+/**/*.d.ts

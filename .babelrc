@@ -1,0 +1,39 @@
+{
+  "presets": [
+    [
+      "next/babel",
+      {
+        "preset-env": {
+          "useBuiltIns": "entry",
+          "corejs": 3
+        }
+      }
+    ],
+    "@emotion/babel-preset-css-prop"
+  ],
+  "plugins": [
+    "@babel/plugin-proposal-optional-chaining",
+    [
+      "module-resolver",
+      {
+        "root": [
+          "."
+        ],
+        "alias": {
+          "@dal": "./src/dal",
+          "@dom": "./src/dom",
+          "@lib": "./src/lib",
+          "@assets": "./src/assets",
+          // atomic design: https://bradfrost.com/blog/post/atomic-web-design/
+          "@atoms": "./src/atoms",
+          "@molecules": "./src/molecules",
+          "@organisms": "./src/organisms",
+          "@templates": "./src/templates",
+          "@pages": "./src/pages",
+          // TODO: remove shared folder
+          "@shared": "./shared"
+        }
+      }
+    ]
+  ]
+}

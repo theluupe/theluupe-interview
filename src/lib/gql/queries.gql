@@ -1,0 +1,19 @@
+#import "./fragments.gql"
+
+query GetUsers {
+  users {
+    ...UserInfo
+  }
+}
+
+query GetPosts {
+  posts {
+    ...PostInfo
+  }
+}
+
+query GetPost($postId: String!) {
+  post(postId: $postId) {
+    ...PostInfo
+  }
+}

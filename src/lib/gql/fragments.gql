@@ -1,0 +1,13 @@
+fragment UserInfo on User {
+  id
+  email
+  firstName
+  lastName
+  fullName
+}
+
+fragment PostInfo on Post {
+  id
+  title
+  content
+}
