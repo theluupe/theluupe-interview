@@ -5,3 +5,9 @@ fragment UserInfo on User {
   lastName
   fullName
 }
+
+fragment PostInfo on Post {
+  id
+  title
+  content
+}

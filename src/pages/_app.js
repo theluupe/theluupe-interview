@@ -32,7 +32,7 @@ const globalStyles = css`
   }
 `;
 
-const WebApp = ({ Component, pageProps }) => {
+const WebApp = ({ Component, pageProps: { session, ...pageProps } }) => {
   return (
     <>
       <Head>
@@ -43,6 +43,7 @@ const WebApp = ({ Component, pageProps }) => {
       <Global styles={globalStyles} />
 
       <ReactNotification />
+
       <Component {...pageProps} />
     </>
   );

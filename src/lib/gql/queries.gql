@@ -5,3 +5,15 @@ query GetUsers {
     ...UserInfo
   }
 }
+
+query GetPosts {
+  posts {
+    ...PostInfo
+  }
+}
+
+query GetPost($postId: String!) {
+  post(postId: $postId) {
+    ...PostInfo
+  }
+}
